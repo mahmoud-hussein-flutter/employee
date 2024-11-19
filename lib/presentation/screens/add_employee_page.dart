@@ -206,7 +206,9 @@ class _AddEmployeePageState extends State<AddEmployeePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(leading: BackButton(
+     color: Colors.white
+   ), 
         title: const Text('Add Employee',
             style: TextStyle(
                 fontWeight: FontWeight.bold,

@@ -55,10 +55,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: AppBar(  leading: BackButton(
+     color: Colors.white
+   ), 
         title: const Text(
           'Employee Manager',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+            color: Colors.white,
+          ),
         ),
         backgroundColor: Colors.blueGrey,
       ),
@@ -111,12 +117,14 @@ class _HomePageState extends State<HomePage> {
                               '${employee.position}\n${employee.department}',
                               style: const TextStyle(color: Colors.grey),
                             ),
-                            trailing: const Icon(Icons.arrow_forward_ios, color: Colors.blueGrey),
+                            trailing: const Icon(Icons.arrow_forward_ios,
+                                color: Colors.blueGrey),
                             onTap: () {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => DetailPage(employeeIndex: index),
+                                  builder: (context) =>
+                                      DetailPage(employeeIndex: index),
                                 ),
                               );
                             },

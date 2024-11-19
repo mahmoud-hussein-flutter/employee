@@ -32,7 +32,8 @@ class _DetailPageState extends State<DetailPage> {
     employeesBox = await Hive.openBox<EmployeeModel>('employees');
     setState(() {
       employee = employeesBox.getAt(widget.employeeIndex);
-      _nameController.text = employee?.name ?? ''; // Initialize controller with employee name
+      _nameController.text =
+          employee?.name ?? ''; // Initialize controller with employee name
     });
   }
 
@@ -71,7 +72,8 @@ class _DetailPageState extends State<DetailPage> {
   }
 
   // Pick file and save to employee folder
-  Future<void> _pickFile(TextEditingController controller, String fieldName, dynamic fieldName_) async {
+  Future<void> _pickFile(TextEditingController controller, String fieldName,
+      dynamic fieldName_) async {
     FilePickerResult? result = await FilePicker.platform.pickFiles();
     if (result != null) {
       File file = File(result.files.single.path!);
@@ -87,8 +89,9 @@ class _DetailPageState extends State<DetailPage> {
       }
 
       // Safely join the file name with the path
-      String newPath = path.join(employeeDirPath, '$fieldName_${path.basename(file.path)}');
-      
+      String newPath =
+          path.join(employeeDirPath, '$fieldName_${path.basename(file.path)}');
+
       // Copy the file to the new location
       await file.copy(newPath);
 
@@ -143,9 +146,16 @@ class _DetailPageState extends State<DetailPage> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: BackButton(
+          color: Colors.white,
+        ),
         title: const Text(
           'Employee Details',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 22,
+          ),
         ),
         backgroundColor: Colors.blueGrey,
       ),
@@ -175,8 +185,9 @@ class _DetailPageState extends State<DetailPage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            EditEmployeePage(employee: employee!),
+                        builder: (context) => EditEmployeePage(
+                            employeeIndex: widget
+                                .employeeIndex), // Pass employeeIndex here
                       ),
                     );
                   },

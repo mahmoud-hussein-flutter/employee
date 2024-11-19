@@ -8,61 +8,61 @@ class EmployeeModel extends HiveObject {
   final int? id;
 
   @HiveField(1)
-  final String name;
+  String name; // Changed from final to mutable
 
   @HiveField(2)
-  final String position;
+  String position; // Changed from final to mutable
 
   @HiveField(3)
-  final String department;
+  String department; // Changed from final to mutable
 
   @HiveField(4)
-  final String businessCardImage;
+  String businessCardImage; // Changed from final to mutable
 
   @HiveField(5)
-  final String nationalIdImage;
+  String nationalIdImage; // Changed from final to mutable
 
   @HiveField(6)
-  final String signedContract;
+  String signedContract; // Changed from final to mutable
 
   @HiveField(7)
-  final String qualifications;
+  String qualifications; // Changed from final to mutable
 
   @HiveField(8)
-  final String healthSpecialistCert;
+  String healthSpecialistCert; // Changed from final to mutable
 
   @HiveField(9)
-  final String cprCourse;
+  String cprCourse; // Changed from final to mutable
 
   @HiveField(10)
-  final String leaveRequest;
+  String leaveRequest; // Changed from final to mutable
 
   @HiveField(11)
-  final String returnFromLeave;
+  String returnFromLeave; // Changed from final to mutable
 
   @HiveField(12)
-  final String businessCardExpirationDate;
+  String businessCardExpirationDate; // Changed from final to mutable
 
   @HiveField(13)
-  final String nationalIdExpirationDate;
+  String nationalIdExpirationDate; // Changed from final to mutable
 
   @HiveField(14)
-  final String contractExpirationDate;
+  String contractExpirationDate; // Changed from final to mutable
 
   @HiveField(15)
-  final String qualificationsExpirationDate;
+  String qualificationsExpirationDate; // Changed from final to mutable
 
   @HiveField(16)
-  final String healthSpecialistCertExpirationDate;
+  String healthSpecialistCertExpirationDate; // Changed from final to mutable
 
   @HiveField(17)
-  final String cprCourseExpirationDate;
+  String cprCourseExpirationDate; // Changed from final to mutable
 
   @HiveField(18)
-  final String leaveRequestExpirationDate;
+  String leaveRequestExpirationDate; // Changed from final to mutable
 
   @HiveField(19)
-  final String returnFromLeaveExpirationDate;
+  String returnFromLeaveExpirationDate; // Changed from final to mutable
 
   EmployeeModel({
     this.id,
